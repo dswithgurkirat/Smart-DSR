@@ -1,0 +1,65 @@
+<!-- ═══ ANNEXURE IV ═══ -->
+<div id="view-anx4" class="view">
+  <div class="header-row">
+    <div>
+      <div class="page-title">Annexure IV — Transportation Routes</div>
+      <div class="page-sub">Transportation routes for individual leases and leases in clusters</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-teal btn-sm" onclick="downloadAnxTemplate(4)">⬇ Excel Template</button>
+      <label class="btn btn-navy btn-sm" style="cursor:pointer">📤 Upload Excel <input type="file" accept=".xlsx,.xls" hidden onchange="handleAnxUpload(event,4)"></label>
+      <button class="btn btn-saffron btn-sm" onclick="exportAnxPDF(4)">📄 Export PDF</button>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-hd"><div class="card-title">Individual Lease Routes</div></div>
+    <div class="card-bd">
+      <div class="tbl-wrap">
+        <table class="anx-tbl" id="anx4-routes" style="min-width:1100px">
+          <thead><tr><th>Sl. No.</th><th>Lease No.</th><th>Route No.</th><th>Tippers/day (Lease)</th><th>Tippers/day (All Leases)</th><th>Length (KM)</th><th>Type of Road</th><th>Recommendation</th><th>Constructed By</th><th>Route Map</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr>
+              <td contenteditable>1</td>
+              <td contenteditable>Jalandhar Sutlej-1<br>Vill-Kadiana, Block-Phillaur</td>
+              <td contenteditable>A-A'<br>B-B'<br>C-C'</td>
+              <td contenteditable>45</td>
+              <td contenteditable>120</td>
+              <td contenteditable>0.73</td>
+              <td><select><option>Black Topped</option><option>Unpaved</option></select></td>
+              <td><select><option>Black Topped</option><option>Unpaved</option></select></td>
+              <td><select><option>Govt</option><option>Lease Owner</option></select></td>
+              <td contenteditable>Route Map attached</td>
+              <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-xs btn-outline" style="margin-top:8px" onclick="addAnx4Row()">+ Add Route</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Cluster Transportation Routes</div></div>
+    <div class="card-bd">
+      <div class="tbl-wrap">
+        <table class="anx-tbl" id="anx4-cluster-routes" style="min-width:1000px">
+          <thead><tr><th>Cluster No.</th><th>Route No.</th><th>Tippers/day (Cluster)</th><th>Tippers/day (All Clusters)</th><th>Length (KM)</th><th>Type of Road</th><th>Recommendation</th><th>Constructed By</th><th>Route Map</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr>
+              <td contenteditable>Jalandhar Sutlej 1,2</td>
+              <td contenteditable>A-A', B-B'<br>C-C' TO F-F'</td>
+              <td contenteditable>90</td>
+              <td contenteditable>350</td>
+              <td contenteditable>8.21</td>
+              <td><select><option>Black Topped</option><option>Unpaved</option></select></td>
+              <td><select><option>Black Topped</option><option>Unpaved</option></select></td>
+              <td><select><option>Govt</option><option>Lease Owner</option></select></td>
+              <td contenteditable>Route Map attached</td>
+              <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-xs btn-outline" style="margin-top:8px" onclick="addAnx4ClusterRow()">+ Add Cluster Route</button>
+    </div>
+  </div>
+</div>

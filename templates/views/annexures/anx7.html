@@ -1,0 +1,37 @@
+<!-- ═══ ANNEXURE VII ═══ -->
+<div id="view-anx7" class="view">
+  <div class="header-row">
+    <div>
+      <div class="page-title">Annexure VII — Final Patta Lands</div>
+      <div class="page-sub">Final patta land summary with ownership and area details</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-teal btn-sm" onclick="downloadAnxTemplate(7)">⬇ Excel Template</button>
+      <label class="btn btn-navy btn-sm" style="cursor:pointer">📤 Upload Excel <input type="file" accept=".xlsx,.xls" hidden onchange="handleAnxUpload(event,7)"></label>
+      <button class="btn btn-saffron btn-sm" onclick="exportAnxPDF(7)">📄 Export PDF</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Patta Land Summary</div></div>
+    <div class="card-bd">
+      <div class="tbl-wrap">
+        <table class="anx-tbl" id="anx7-patta-final" style="min-width:900px">
+          <thead><tr><th>Owner Name</th><th>Patta No.</th><th>Area (Ha)</th><th>District</th><th>Tehsil</th><th>Village</th><th>Remarks</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr>
+              <td contenteditable>Jaswinder Singh</td>
+              <td contenteditable>123/1</td>
+              <td contenteditable>2.50</td>
+              <td contenteditable>Jalandhar</td>
+              <td contenteditable>Phillaur</td>
+              <td contenteditable>Kadiana</td>
+              <td contenteditable>Agricultural</td>
+              <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-xs btn-outline" style="margin-top:8px" onclick="addRow('anx7-patta-final',['','','0.00','','','','','<button class=\'btn btn-xs btn-danger\' onclick=\'delRow(this)\'>✕</button>'])">+ Add Patta Land</button>
+    </div>
+  </div>
+</div>

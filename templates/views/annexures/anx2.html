@@ -1,0 +1,52 @@
+<!-- ═══ ANNEXURE II ═══ -->
+<div id="view-anx2" class="view">
+  <div class="header-row">
+    <div>
+      <div class="page-title">Annexure II — Mining Leases</div>
+      <div class="page-sub">List of Potential Mining Leases (Existing & Proposed) Rivers</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-teal btn-sm" onclick="downloadAnxTemplate(2)">⬇ Excel Template</button>
+      <label class="btn btn-navy btn-sm" style="cursor:pointer">📤 Upload Excel <input type="file" accept=".xlsx,.xls" hidden onchange="handleAnxUpload(event,2)"></label>
+      <button class="btn btn-saffron btn-sm" onclick="exportAnxPDF(2)">📄 Export PDF</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-bd">
+      <div class="tbl-wrap">
+        <table class="anx-tbl" id="anx2-leases" style="min-width:1200px">
+          <thead><tr>
+            <th>Sl. No.</th><th>River Details</th><th>Sand Bar Code</th><th>Lease Details</th>
+            <th>Area (Ha)</th><th>Latitude</th><th>Longitude</th>
+            <th>Dist. From PRB (KM)</th><th>Within 500m?</th>
+            <th>Mining Density (g/cc)</th><th>Deposit Depth (m)</th>
+            <th>Total Excav. MT/YR</th><th>Total Excav. Vol. (60%)</th>
+            <th>Mineral</th><th>Existing/Proposed</th><th>Remarks</th><th>Action</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td contenteditable>1</td>
+              <td contenteditable>Sutlej</td>
+              <td contenteditable>JL-ST-01</td>
+              <td contenteditable>Jalandhar Sutlej-1<br>Vill-Kadiana, Block-Phillaur</td>
+              <td contenteditable>12.50</td>
+              <td contenteditable class="coord-input">31°04'48.86"N<br>31°04'18.21"N</td>
+              <td contenteditable class="coord-input">75°53'39.66"E<br>75°53'47.89"E</td>
+              <td contenteditable>2.5</td>
+              <td><select><option>Yes</option><option>No</option></select></td>
+              <td contenteditable>1.52</td>
+              <td contenteditable>3</td>
+              <td contenteditable>285000</td>
+              <td contenteditable>171000</td>
+              <td contenteditable>Sand</td>
+              <td><select><option>Existing</option><option>Proposed</option></select></td>
+              <td contenteditable>—</td>
+              <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-xs btn-outline" style="margin-top:10px" onclick="addAnx2Row()">+ Add Lease</button>
+    </div>
+  </div>
+</div>

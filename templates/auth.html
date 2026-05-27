@@ -1,0 +1,65 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     SCREEN 1 — AUTH
+═══════════════════════════════════════════════════════════════ -->
+<div id="screen-auth" class="screen active">
+  <div class="auth-bg"><div class="auth-grid-lines"></div></div>
+  <div class="auth-wrap">
+    <div class="auth-left">
+      <div>
+        <div class="iit-emblem">
+          <div class="emblem-mark">IIT</div>
+          <div class="emblem-info">
+            <h1>Indian Institute of Technology Ropar</h1>
+            <p>District Survey Report Automation System</p>
+          </div>
+        </div>
+        <div class="auth-title">District Survey<br>Report Portal <em>2025-26</em></div>
+        <div class="auth-desc">Prepare, manage, and digitally sign DSRs for sand mining across Punjab districts. Fully EMGSM 2020 compliant.</div>
+        <div class="auth-pills">
+          <div class="auth-pill"><div class="pill-icon">📊</div><span>Auto-generated cross section graphs & elevation charts</span></div>
+          <div class="auth-pill"><div class="pill-icon">📋</div><span>All 10 chapters, plates, annexures I–IV fully templated</span></div>
+          <div class="auth-pill"><div class="pill-icon">✍️</div><span>5-level sequential e-signature authority workflow</span></div>
+          <div class="auth-pill"><div class="pill-icon">📥</div><span>Professional government-format PDF export</span></div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.2);margin-top:32px;">Government of Punjab · EMGSM 2020 · IIT Ropar Research Cell</div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-tabs">
+        <div class="auth-tab active" onclick="switchAuthTab('login')">Login</div>
+        <div class="auth-tab" onclick="switchAuthTab('signup')">Register</div>
+      </div>
+      <!-- LOGIN -->
+      <div id="auth-form-login" class="auth-form active">
+        <div class="auth-form-title">Welcome back</div>
+        <div class="auth-form-sub">Sign in to your DSR Portal account</div>
+        <div class="f-field"><label>Email Address</label><input id="login-email" type="email" placeholder="officer@punjab.gov.in" value="demo@iitropar.ac.in"></div>
+        <div class="f-field"><label>Password</label><input id="login-pass" type="password" placeholder="••••••••" value="password123"></div>
+        <div class="f-field"><label>Login As</label>
+          <select id="login-role">
+            <option value="user">Report Coordinator / Data Entry</option>
+            <option value="reviewer">Section Reviewer</option>
+            <option value="authority">Authority / Signing Officer</option>
+            <option value="admin">System Administrator</option>
+          </select>
+        </div>
+        <div class="form-err" id="login-error"></div>
+        <button class="btn-primary" onclick="doLogin()">Login to Portal →</button>
+        <div class="auth-divider"><span>OR</span></div>
+        <button class="btn-authority" onclick="doAuthorityQuickLogin()">⚡ Quick Demo — Authority Dashboard</button>
+      </div>
+      <!-- REGISTER -->
+      <div id="auth-form-signup" class="auth-form">
+        <div class="auth-form-title">Create account</div>
+        <div class="auth-form-sub">Register as a new DSR portal user</div>
+        <div class="f-field"><label>Full Name</label><input id="signup-name" placeholder="Rajinder Kumar"></div>
+        <div class="f-field"><label>Official Email</label><input id="signup-email" type="email" placeholder="officer@punjab.gov.in"></div>
+        <div class="f-field"><label>Department / Designation</label><input id="signup-dept" placeholder="Sub-Divisional Officer, Jalandhar"></div>
+        <div class="f-field"><label>Password (min 6 chars)</label><input id="signup-pass" type="password" placeholder="••••••••"></div>
+        <div class="form-err" id="signup-error"></div>
+        <div class="form-ok" id="signup-success"></div>
+        <button class="btn-primary" onclick="doSignup()">Create Account →</button>
+      </div>
+    </div>
+  </div>
+</div>

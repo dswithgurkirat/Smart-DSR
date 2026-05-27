@@ -1,0 +1,233 @@
+<!-- ═══ ANNEXURE I ═══ -->
+<div id="view-anx1" class="view">
+  <div class="header-row">
+    <div>
+      <div class="page-title">Annexure I — Sand Sources</div>
+      <div class="page-sub">Details of Sand/M-Sand Sources · EMGSM 2020</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <!-- Global Upload PDF Button -->
+      <label class="btn btn-saffron btn-sm" style="cursor:pointer">
+        📤 Upload PDF
+        <input type="file" accept="application/pdf" hidden onchange="handlePDFUpload(event)">
+      </label>
+    </div>
+  </div>
+  
+  <div class="notif notif-info" style="margin-bottom:16px">
+    Download the Excel template for each section below → Fill values locally → Upload at the bottom of the section → Click 'Download Final Annexure 1 PDF' when ready.
+  </div>
+  
+  <!-- PDF Preview Section (Hidden by default) -->
+  <div id="pdf-preview-section" class="card" style="display: none; border-color: #0ea5e9; margin-bottom: 24px;">
+    <div class="card-bd">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="margin: 0; font-size: 18px; color: #0369a1;">Uploaded PDF Preview</h3>
+        <button class="btn btn-sm btn-danger" onclick="closePDFPreview()">✕ Close Preview</button>
+      </div>
+      <iframe id="pdf-iframe" style="width: 100%; height: 600px; border: 1px solid #e5e7eb; border-radius: 6px; background: #f9fafb;"></iframe>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-bd">
+      
+      <!-- Section A -->
+      <div class="anx-section">
+        <div class="anx-section-header">
+          <div class="anx-section-title">a) Rivers:</div>
+          <button class="btn btn-teal btn-xs" onclick="downloadSectionTemplate('A')">⬇ Excel Template (Rivers)</button>
+        </div>
+        
+        <div class="tbl-wrap">
+          <table class="anx-tbl" id="anx1-rivers">
+            <thead>
+              <tr>
+                <th>River Name/M-Sand Plant</th>
+                <th>Total Stretch of River (in KM)</th>
+                <th>Type of River (Perennial or Non Perennial)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable="true">Sutlej</td>
+                <td contenteditable="true">90.66</td>
+                <td><select><option>Perennial</option><option>Non-Perennial</option></select></td>
+                <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+              </tr>
+              <tr>
+                <td contenteditable="true">Beas</td>
+                <td contenteditable="true">65.20</td>
+                <td><select><option>Perennial</option><option>Non-Perennial</option></select></td>
+                <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="section-footer">
+          <button class="btn btn-xs btn-outline" onclick="addRowAnx1('anx1-rivers',['','','<select><option>Perennial</option><option>Non-Perennial</option></select>','<button class=\'btn btn-xs btn-danger\' onclick=\'delRow(this)\'>✕</button>'])">+ Add River</button>
+          <label class="btn btn-navy btn-xs" style="cursor:pointer">
+            📤 Upload Excel (Rivers) 
+            <input type="file" accept=".xlsx,.xls,.csv" hidden onchange="handleSectionUpload(event, 'A')">
+          </label>
+        </div>
+      </div>
+
+      <!-- Section B -->
+      <div class="anx-section">
+        <div class="anx-section-header">
+          <div class="anx-section-title">b) De-Siltation Location (Lakes/Ponds/Dams etc.):</div>
+          <button class="btn btn-teal btn-xs" onclick="downloadSectionTemplate('B')">⬇ Excel Template (De-Siltation)</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="anx-tbl" id="anx1-desilt">
+            <thead>
+              <tr>
+                <th>Name of Reservoir/Dams</th>
+                <th>Maintain/Controlled by State Govt./PSU etc.</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>District</th>
+                <th>Tehsil</th>
+                <th>Village</th>
+                <th>Size (Ha)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable="true">Sutlej</td>
+                <td contenteditable="true">State Govt.</td>
+                <td contenteditable="true" class="coord-input">31°00'56"N</td>
+                <td contenteditable="true" class="coord-input">75°54'59"E</td>
+                <td contenteditable="true">Jalandhar</td>
+                <td contenteditable="true">Phillaur</td>
+                <td contenteditable="true">Powari</td>
+                <td contenteditable="true">10.93</td>
+                <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+              </tr>
+              <tr>
+                <td contenteditable="true">Sutlej</td>
+                <td contenteditable="true">State Govt.</td>
+                <td contenteditable="true" class="coord-input">31°00'35"N</td>
+                <td contenteditable="true" class="coord-input">75°52'49"E</td>
+                <td contenteditable="true">Jalandhar</td>
+                <td contenteditable="true">Phillaur</td>
+                <td contenteditable="true">Kadiana</td>
+                <td contenteditable="true">12.42</td>
+                <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="section-footer">
+          <button class="btn btn-xs btn-outline" onclick="addRowAnx1('anx1-desilt',['','','','','','','','','<button class=\'btn btn-xs btn-danger\' onclick=\'delRow(this)\'>✕</button>'])">+ Add Location</button>
+          <label class="btn btn-navy btn-xs" style="cursor:pointer">
+            📤 Upload Excel (De-Siltation) 
+            <input type="file" accept=".xlsx,.xls,.csv" hidden onchange="handleSectionUpload(event, 'B')">
+          </label>
+        </div>
+      </div>
+
+      <!-- Section C -->
+      <div class="anx-section">
+        <div class="anx-section-header">
+          <div class="anx-section-title">c) Patta lands/Khatedari land:</div>
+          <button class="btn btn-teal btn-xs" onclick="downloadSectionTemplate('C')">⬇ Excel Template (Patta Lands)</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="anx-tbl" id="anx1-patta">
+            <thead>
+              <tr>
+                <th>Owner</th>
+                <th>SL. No</th>
+                <th>Area (Ha)</th>
+                <th>District</th>
+                <th>Tehsil</th>
+                <th>Village</th>
+                <th>Agricultural Land (Yes/No)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable="true">Jaswinder Singh</td>
+                <td contenteditable="true">123/1</td>
+                <td contenteditable="true">2.50</td>
+                <td contenteditable="true">Jalandhar</td>
+                <td contenteditable="true">Phillaur</td>
+                <td contenteditable="true">Kadiana</td>
+                <td><select><option>Yes</option><option>No</option></select></td>
+                <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="section-footer">
+          <button class="btn btn-xs btn-outline" onclick="addRowAnx1('anx1-patta',['','','','','','','<select><option>Yes</option><option>No</option></select>','<button class=\'btn btn-xs btn-danger\' onclick=\'delRow(this)\'>✕</button>'])">+ Add Patta Land</button>
+          <label class="btn btn-navy btn-xs" style="cursor:pointer">
+            📤 Upload Excel (Patta Lands)
+            <input type="file" accept=".xlsx,.xls,.csv" hidden onchange="handleSectionUpload(event, 'C')">
+          </label>
+        </div>
+      </div>
+
+      <!-- Section D -->
+      <div class="anx-section">
+        <div class="anx-section-header">
+          <div class="anx-section-title">d) M-Sand Plants:</div>
+          <button class="btn btn-teal btn-xs" onclick="downloadSectionTemplate('D')">⬇ Excel Template (M-Sand)</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="anx-tbl" id="anx1-msand">
+            <thead>
+              <tr>
+                <th>Plant Name</th>
+                <th>Owner</th>
+                <th>District</th>
+                <th>Tehsil</th>
+                <th>Village</th>
+                <th>Geo-location</th>
+                <th>Quantity Tonnes/Annum</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable="true">Not Available</td>
+                <td contenteditable="true">Not Available</td>
+                <td contenteditable="true">Jalandhar</td>
+                <td contenteditable="true">Phillaur</td>
+                <td contenteditable="true">Not Available</td>
+                <td contenteditable="true" class="coord-input">Not Available</td>
+                <td contenteditable="true">Not Available</td>
+                <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="section-footer">
+          <button class="btn btn-xs btn-outline" onclick="addRowAnx1('anx1-msand',['','','','','','','','<button class=\'btn btn-xs btn-danger\' onclick=\'delRow(this)\'>✕</button>'])">+ Add M-Sand Plant</button>
+          <label class="btn btn-navy btn-xs" style="cursor:pointer">
+            📤 Upload Excel (M-Sand)
+            <input type="file" accept=".xlsx,.xls,.csv" hidden onchange="handleSectionUpload(event, 'D')">
+          </label>
+        </div>
+      </div>
+
+      <!-- Final Action Area -->
+      <div class="final-actions">
+        <button class="btn btn-saffron btn-lg" onclick="exportAnx1PDF(this)">📄 Download Final Annexure 1 PDF</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<!-- ═══ ANNEXURE V ═══ -->
+<div id="view-anx5" class="view">
+  <div class="header-row">
+    <div>
+      <div class="page-title">Annexure V — Bench Mark & CORS</div>
+      <div class="page-sub">Permanent bench mark records and CORS station coordinates</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-teal btn-sm" onclick="downloadAnxTemplate(5)">⬇ Excel Template</button>
+      <label class="btn btn-navy btn-sm" style="cursor:pointer">📤 Upload Excel <input type="file" accept=".xlsx,.xls" hidden onchange="handleAnxUpload(event,5)"></label>
+      <button class="btn btn-saffron btn-sm" onclick="exportAnxPDF(5)">📄 Export PDF</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Bench Mark & CORS Points</div></div>
+    <div class="card-bd">
+      <div class="tbl-wrap">
+        <table class="anx-tbl" id="anx5-benchmarks" style="min-width:900px">
+          <thead><tr><th>Point Name</th><th>Type</th><th>Latitude</th><th>Longitude</th><th>Elevation (m)</th><th>Remarks</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr>
+              <td contenteditable>BM-JAL-01</td>
+              <td><select><option>Bench Mark</option><option>CORS</option></select></td>
+              <td contenteditable class="coord-input">31.025890 N</td>
+              <td contenteditable class="coord-input">75.304797 E</td>
+              <td contenteditable>236.45</td>
+              <td contenteditable>Riverbank reference point</td>
+              <td><button class="btn btn-xs btn-danger" onclick="delRow(this)">✕</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-xs btn-outline" style="margin-top:8px" onclick="addRow('anx5-benchmarks',['','<select><option>Bench Mark</option><option>CORS</option></select>','','','','','<button class=\'btn btn-xs btn-danger\' onclick=\'delRow(this)\'>✕</button>'])">+ Add Point</button>
+    </div>
+  </div>
+</div>
